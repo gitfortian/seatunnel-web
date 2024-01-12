@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.apache.seatunnel.app.thirdparty.framework;
 
 import org.apache.seatunnel.api.configuration.util.OptionRule;
@@ -26,7 +27,6 @@ import org.apache.seatunnel.app.domain.response.connector.ConnectorInfo;
 import org.apache.seatunnel.app.dynamicforms.FormStructure;
 import org.apache.seatunnel.common.config.Common;
 import org.apache.seatunnel.common.constants.PluginType;
-import org.apache.seatunnel.common.utils.FileUtils;
 import org.apache.seatunnel.plugin.discovery.AbstractPluginDiscovery;
 import org.apache.seatunnel.plugin.discovery.PluginIdentifier;
 import org.apache.seatunnel.plugin.discovery.seatunnel.SeaTunnelSinkPluginDiscovery;
@@ -36,7 +36,6 @@ import lombok.NonNull;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -62,12 +61,18 @@ public class PluginDiscoveryUtil {
         if (!pluginType.equals(PluginType.SOURCE)) {
             throw new UnsupportedOperationException("ONLY support plugin type source");
         }
-        Path path = new SeaTunnelSinkPluginDiscovery().getPluginDir();
+
+        ArrayList<PluginIdentifier> pluginIdentifiers = new ArrayList<>();
+        pluginIdentifiers.addAll(
+                SeaTunnelSinkPluginDiscovery.getAllSupportedPlugins(PluginType.SOURCE).keySet());
+        List<URL> pluginJarPaths =
+                new SeaTunnelSinkPluginDiscovery().getPluginJarPaths(pluginIdentifiers);
+
         List<Factory> factories;
-        if (path.toFile().exists()) {
-            List<URL> files = FileUtils.searchJarFiles(path);
+        if (!pluginJarPaths.isEmpty()) {
             factories =
-                    FactoryUtil.discoverFactories(new URLClassLoader(files.toArray(new URL[0])));
+                    FactoryUtil.discoverFactories(
+                            new URLClassLoader(pluginJarPaths.toArray(new URL[0])));
         } else {
             factories =
                     FactoryUtil.discoverFactories(Thread.currentThread().getContextClassLoader());
@@ -149,5 +154,9 @@ public class PluginDiscoveryUtil {
     public static ConcurrentMap<String, FormStructure> getTransformFormStructures(
             Map<PluginType, LinkedHashMap<PluginIdentifier, OptionRule>> allPlugins) {
         return getDownloadedConnectorFormStructures(allPlugins, PluginType.TRANSFORM);
+    }
+
+    public static void main(String[] args) throws IOException {
+        getConnectorFeatures(PluginType.SOURCE);
     }
 }

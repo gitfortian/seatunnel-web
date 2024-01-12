@@ -182,10 +182,10 @@
             <groupId>org.apache.seatunnel</groupId>
             <artifactId>connector-file-local</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-file-oss</artifactId>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-file-oss</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.apache.seatunnel</groupId>
             <artifactId>connector-file-ftp</artifactId>
@@ -194,10 +194,10 @@
             <groupId>org.apache.seatunnel</groupId>
             <artifactId>connector-file-sftp</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-hudi</artifactId>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-hudi</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.apache.seatunnel</groupId>
             <artifactId>connector-email</artifactId>
@@ -207,64 +207,64 @@
             <artifactId>connector-elasticsearch</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-neo4j</artifactId>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-neo4j</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.apache.seatunnel</groupId>
             <artifactId>connector-redis</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-sentry</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-iceberg</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-influxdb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-cassandra</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-file-s3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-tablestore</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-slack</artifactId>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-sentry</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-iceberg</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-influxdb</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-cassandra</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-file-s3</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-tablestore</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-slack</artifactId>-->
+        <!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.seatunnel</groupId>
             <artifactId>connector-http-jira</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-rabbitmq</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-openmldb</artifactId>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-rabbitmq</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-openmldb</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.apache.seatunnel</groupId>
             <artifactId>connector-doris</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.seatunnel</groupId>
-            <artifactId>connector-maxcompute</artifactId>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.seatunnel</groupId>-->
+        <!--            <artifactId>connector-maxcompute</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.apache.seatunnel</groupId>
             <artifactId>connector-cdc-sqlserver</artifactId>
@@ -479,7 +479,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
